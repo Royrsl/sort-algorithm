@@ -1,16 +1,17 @@
 #include <stdio.h>
 int * bubble_sort(int arr[], int length)
 {
-    int i = 0;
-    int j = 0;
+    int i = 0, j=0;
+    int temp = 0;
     printf("%d\n", length);
     for(i=0; i<length-1; i++)
     {
-        if(arr[i] > arr[i+1])
+        for(j=0; j<length - i; j++)
+        if(arr[j] > arr[j+1])
         {
-            j = arr[i+1];
-            arr[i+1] = arr[i];
-            arr[i] = j;
+            temp = arr[j+1];
+            arr[j+1] = arr[j];
+            arr[j] = temp;
         }
     }
     for(i=0; i<length; i++)
@@ -21,12 +22,10 @@ int * bubble_sort(int arr[], int length)
 }
 int main()
 {
-    int arr[] = {2,1,3,5,4,7,10,6,8,9};
+    int arr[] = {2,2,8,1,3,5,4,7,6,9};
     int length = sizeof(arr)/sizeof(int);
     int * a = bubble_sort(arr, length);
-    for(int i=0; i<length; i++)
-    {
-        printf("%d\n", a[i]);
-    }
+    int i=0;
+
     return 0;
 }
