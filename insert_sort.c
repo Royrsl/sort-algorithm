@@ -12,6 +12,10 @@ void insert_sort(int arr[], int length)
                arr[j-1] = arr[j];
                arr[j] = tmp;
            }
+           else{
+               continue;
+           }
+           
        }
     }
     for(i=0; i<length; i++)
